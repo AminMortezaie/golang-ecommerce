@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"os"
 
 	"github.com/aminmortezaie/golang-ecommerce/controllers"
@@ -28,4 +29,6 @@ func main() {
 	router.GET("/removeitem", app.RemoveItem())
 	router.GET("/cartcheckout", app.BuyFromCart())
 	router.GET("/instantbuy", app.InstantBuy())
+
+	log.Fatal(router.Run(":" + port))
 }
